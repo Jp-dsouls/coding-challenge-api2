@@ -1,10 +1,12 @@
 // config/server.js
 const express = require('express');
+const cors = require('cors');
 const matrixRoutes = require('../routes/matrixRoutes');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
+app.use(cors());
 // Middleware para parsear JSON
 app.use(express.json());
 
